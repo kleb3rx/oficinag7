@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Oficina G7 | Especialistas em Mecânica Automotiva em Barueri</title>
+    <meta name="description"
+        content="Mais de 10 anos oferecendo confiança, qualidade e manutenção especializada para o seu veículo em Barueri.">
+
+    <!-- Fonts: Montserrat for a modern, strong look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#DB1A1A',
+                            light: '#F7F6E5',
+                            dark: '#111111',
+                            gray: '#555555'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles to complement Tailwind */
+        .hero-bg {
+            background-image: linear-gradient(rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0.95)), url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll;
+            /* Better for mobile than fixed parallax */
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Prevent tap highlight on mobile */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-brand-dark bg-brand-light antialiased pt-20">
+
+    <header
+        class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-sm shadow-md transition-all duration-300 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <!-- Logo -->
+                <a href="#" class="flex items-center z-50">
+                    <img src="./oficinag7.png" alt="Oficina G7 Logo"
+                        class="h-12 md:h-14 w-auto object-contain drop-shadow-md">
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#sobre"
+                        class="text-sm font-semibold text-gray-300 hover:text-brand-red transition-colors">Sobre</a>
+                    <a href="#servicos"
+                        class="text-sm font-semibold text-gray-300 hover:text-brand-red transition-colors">Serviços</a>
+                    <a href="#diferenciais"
+                        class="text-sm font-semibold text-gray-300 hover:text-brand-red transition-colors">Diferenciais</a>
+                    <a href="#depoimentos"
+                        class="text-sm font-semibold text-gray-300 hover:text-brand-red transition-colors">Avaliações</a>
+                    <a href="#contato"
+                        class="text-sm font-semibold text-gray-300 hover:text-brand-red transition-colors">Contato</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn"
+                    class="md:hidden text-white hover:text-brand-red focus:outline-none p-2 z-50"
+                    aria-label="Abrir menu">
+                    <i class="ph ph-list text-3xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 ease-in-out pt-20 flex flex-col">
+            <nav class="flex-1 px-4 py-6 space-y-4 overflow-y-auto">
+                <a href="#sobre"
+                    class="mobile-link block px-4 py-4 text-xl font-semibold text-brand-dark hover:text-brand-red hover:bg-brand-light rounded-xl transition-colors border-b border-gray-100">Sobre
+                    a Oficina</a>
+                <a href="#servicos"
+                    class="mobile-link block px-4 py-4 text-xl font-semibold text-brand-dark hover:text-brand-red hover:bg-brand-light rounded-xl transition-colors border-b border-gray-100">Nossos
+                    Serviços</a>
+                <a href="#diferenciais"
+                    class="mobile-link block px-4 py-4 text-xl font-semibold text-brand-dark hover:text-brand-red hover:bg-brand-light rounded-xl transition-colors border-b border-gray-100">Diferenciais</a>
+                <a href="#depoimentos"
+                    class="mobile-link block px-4 py-4 text-xl font-semibold text-brand-dark hover:text-brand-red hover:bg-brand-light rounded-xl transition-colors border-b border-gray-100">Avaliações</a>
+                <a href="#contato"
+                    class="mobile-link block px-4 py-4 text-xl font-semibold text-brand-dark hover:text-brand-red hover:bg-brand-light rounded-xl transition-colors border-b border-gray-100">Contato</a>
+
+                <div class="mt-8 px-2">
+                    <a href="https://wa.me/5511947313860" target="_blank"
+                        class="w-full flex justify-center items-center gap-2 bg-brand-red text-white px-4 py-5 rounded-xl font-bold text-lg shadow-lg active:scale-95 transition-transform">
+                        <i class="ph ph-whatsapp-logo text-2xl"></i>
+                        Falar no WhatsApp
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section (Mobile First Layout) -->
+    <section id="inicio" class="relative pt-12 pb-16 md:pt-24 md:pb-24 hero-bg min-h-[90vh] flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+
+                <!-- Hero Content -->
+                <div class="text-left space-y-6 md:space-y-8 w-full">
+                    <div
+                        class="inline-block px-4 py-2 rounded-full bg-brand-red/20 border border-brand-red/40 text-white font-semibold text-xs md:text-sm backdrop-blur-md">
+                        <i class="ph ph-map-pin mr-1 inline"></i> Barueri - SP | Atendimento Especializado
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight">
+                        Especialistas em <br />
+                        <span class="text-brand-red">Mecânica Automotiva</span>
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-gray-200 max-w-xl font-medium">
+                        Mais de 10 anos oferecendo confiança, qualidade e manutenção especializada para o seu veículo.
+                    </p>
+
+                    <!-- Mobile Buttons: Stacked. Desktop: Side-by-side -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="https://wa.me/5511947313860" target="_blank"
+                            class="w-full sm:w-auto bg-brand-red hover:bg-red-700 text-white px-6 py-4 md:px-8 md:py-4 rounded-xl font-bold text-base md:text-lg flex items-center justify-center gap-2 transition-all shadow-lg active:scale-95">
+                            <i class="ph-fill ph-whatsapp-logo text-2xl"></i>
+                            Fale no WhatsApp
+                        </a>
+                        <a href="#contato"
+                            class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/30 px-6 py-4 md:px-8 md:py-4 rounded-xl font-bold text-base md:text-lg flex items-center justify-center transition-all backdrop-blur-sm active:scale-95">
+                            Solicitar orçamento
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Features / Trust Badges -->
+                <div class="w-full lg:ml-auto max-w-md mx-auto lg:mx-0 flex flex-col gap-3">
+                    <div
+                        class="bg-black/50 backdrop-blur-md border border-white/10 p-4 rounded-xl flex items-center gap-4 transform lg:-translate-x-8">
+                        <div
+                            class="w-12 h-12 bg-brand-red rounded-lg flex items-center justify-center text-white shrink-0 shadow-lg">
+                            <i class="ph ph-wrench text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold text-base">Atendimento especializado</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-black/50 backdrop-blur-md border border-white/10 p-4 rounded-xl flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-brand-red rounded-lg flex items-center justify-center text-white shrink-0 shadow-lg">
+                            <i class="ph ph-magnifying-glass-plus text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold text-base">Diagnóstico preciso</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-black/50 backdrop-blur-md border border-white/10 p-4 rounded-xl flex items-center gap-4 transform lg:-translate-x-4">
+                        <div
+                            class="w-12 h-12 bg-brand-red rounded-lg flex items-center justify-center text-white shrink-0 shadow-lg">
+                            <i class="ph ph-shield-check text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold text-base">Honestidade e transparência</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+                <!-- Image - Mobile First (Appears before text on mobile) -->
+                <div class="relative w-full px-2 sm:px-0">
+                    <div class="absolute -inset-2 md:-inset-4 bg-brand-light rounded-2xl transform rotate-3"></div>
+                    <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                        alt="Mecânico trabalhando"
+                        class="relative rounded-2xl shadow-xl w-full h-[300px] md:h-[450px] object-cover">
+
+                    <div
+                        class="absolute -bottom-6 -right-2 md:-bottom-8 md:-right-8 bg-brand-red p-4 md:p-6 rounded-xl shadow-xl text-white border-4 border-white">
+                        <div class="flex items-center gap-3">
+                            <span class="font-black text-4xl md:text-5xl">+10</span>
+                            <span class="font-bold text-xs md:text-sm leading-tight">Anos de<br>Experiência</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="space-y-6 mt-8 lg:mt-0">
+                    <div
+                        class="inline-flex items-center gap-2 text-brand-red font-bold tracking-wider text-sm uppercase">
+                        <span class="w-8 h-1 bg-brand-red rounded-full"></span> Nossa História
+                    </div>
+
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-tight">Conheça a
+                        Oficina G7</h2>
+
+                    <div class="space-y-4 text-brand-gray text-base md:text-lg leading-relaxed">
+                        <p>
+                            A <strong>Oficina G7</strong> nasceu da paixão por mecânica automotiva e do compromisso com
+                            um atendimento honesto e de qualidade. Liderada por Wagner, conhecido como G7, a oficina
+                            atua há mais de 10 anos oferecendo serviços mecânicos especializados, sempre priorizando
+                            confiança, transparência e excelência no atendimento.
+                        </p>
+                        <p>
+                            Com experiência em diferentes tipos de veículos e constante atualização profissional, a
+                            Oficina G7 se tornou referência em manutenção automotiva na região de Barueri.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-16 md:py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16 space-y-4">
+                <div
+                    class="inline-flex items-center gap-2 text-brand-red font-bold tracking-wider text-sm uppercase justify-center w-full">
+                    <span class="w-4 h-1 bg-brand-red rounded-full"></span> O que fazemos <span
+                        class="w-4 h-1 bg-brand-red rounded-full"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark">Nossos Serviços</h2>
+            </div>
+
+            <!-- Grid Mobile First: 1 col on mobile, 2 on tablet, 4 on desktop -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+
+                <!-- Service Card 1 -->
+                <div
+                    class="bg-white p-6 md:p-8 rounded-2xl shadow-soft hover:-translate-y-1 transition-transform duration-300 border border-gray-100 flex flex-col items-center text-center">
+                    <div
+                        class="w-16 h-16 bg-brand-light text-brand-red rounded-xl flex items-center justify-center mb-5">
+                        <i class="ph ph-wrench text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-dark">Manutenção Preventiva</h3>
+                    <p class="text-brand-gray text-sm">Prevenção para evitar problemas e gastos inesperados.</p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div
+                    class="bg-white p-6 md:p-8 rounded-2xl shadow-soft hover:-translate-y-1 transition-transform duration-300 border border-gray-100 flex flex-col items-center text-center">
+                    <div
+                        class="w-16 h-16 bg-brand-light text-brand-red rounded-xl flex items-center justify-center mb-5">
+                        <i class="ph ph-magnifying-glass-plus text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-dark">Revisão Geral</h3>
+                    <p class="text-brand-gray text-sm">Checagem completa dos sistemas vitais do seu veículo.</p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div
+                    class="bg-white p-6 md:p-8 rounded-2xl shadow-soft hover:-translate-y-1 transition-transform duration-300 border border-gray-100 flex flex-col items-center text-center">
+                    <div
+                        class="w-16 h-16 bg-brand-light text-brand-red rounded-xl flex items-center justify-center mb-5">
+                        <i class="ph ph-drop text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-dark">Troca de Fluídos</h3>
+                    <p class="text-brand-gray text-sm">Substituição adequada garantindo bom funcionamento.</p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div
+                    class="bg-white p-6 md:p-8 rounded-2xl shadow-soft hover:-translate-y-1 transition-transform duration-300 border border-gray-100 flex flex-col items-center text-center">
+                    <div
+                        class="w-16 h-16 bg-brand-light text-brand-red rounded-xl flex items-center justify-center mb-5">
+                        <i class="ph ph-gas-pump text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-dark">Troca de Óleo</h3>
+                    <p class="text-brand-gray text-sm">Óleos de alta qualidade para maior vida útil do motor.</p>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div
+                    class="bg-white p-6 md:p-8 rounded-2xl shadow-soft hover:-translate-y-1 transition-transform duration-300 border border-gray-100 flex flex-col items-center text-center">
+                    <div
+                        class="w-16 h-16 bg-brand-light text-brand-red rounded-xl flex items-center justify-center mb-5">
+                        <i class="ph ph-engine text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-dark">Mecânica de Motores</h3>
+                    <p class="text-brand-gray text-sm">Diagnóstico e reparo preciso com peças originais.</p>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div
+                    class="bg-white p-6 md:p-8 rounded-2xl shadow-soft hover:-translate-y-1 transition-transform duration-300 border border-gray-100 flex flex-col items-center text-center">
+                    <div
+                        class="w-16 h-16 bg-brand-light text-brand-red rounded-xl flex items-center justify-center mb-5">
+                        <i class="ph ph-stop-circle text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-dark">Sistema de Freios</h3>
+                    <p class="text-brand-gray text-sm">Manutenção de pastilhas, discos e ABS.</p>
+                </div>
+
+                <!-- Service Card 7 -->
+                <div
+                    class="bg-white p-6 md:p-8 rounded-2xl shadow-soft hover:-translate-y-1 transition-transform duration-300 border border-gray-100 flex flex-col items-center text-center">
+                    <div
+                        class="w-16 h-16 bg-brand-light text-brand-red rounded-xl flex items-center justify-center mb-5">
+                        <i class="ph ph-arrows-out-line-vertical text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-dark">Suspensão e Direção</h3>
+                    <p class="text-brand-gray text-sm">Amortecedores e direção para maior estabilidade.</p>
+                </div>
+
+                <!-- Service Card 8 -->
+                <div
+                    class="bg-white p-6 md:p-8 rounded-2xl shadow-soft hover:-translate-y-1 transition-transform duration-300 border border-gray-100 flex flex-col items-center text-center">
+                    <div
+                        class="w-16 h-16 bg-brand-light text-brand-red rounded-xl flex items-center justify-center mb-5">
+                        <i class="ph ph-laptop text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-dark">Diagnóstico Eletrônico</h3>
+                    <p class="text-brand-gray text-sm">Leitura via scanner para identificar falhas.</p>
+                </div>
+            </div>
+
+            <!-- Mobile Call to Action -->
+            <div class="mt-10 text-center">
+                <a href="https://wa.me/5511947313860" target="_blank"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-brand-red border-2 border-brand-red px-6 py-4 rounded-xl font-bold text-lg hover:bg-brand-red hover:text-white transition-colors active:scale-95">
+                    Precisa de outro serviço?
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marcas Section -->
+    <section class="py-12 md:py-16 bg-white border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-center text-sm md:text-base font-bold text-brand-gray uppercase tracking-widest mb-8">
+                Principais Marcas Atendidas</h2>
+
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8 items-center text-brand-dark">
+                <!-- Simple strong text blocks for logos -->
+                <div class="px-4 py-2 font-black text-xl md:text-2xl uppercase tracking-tighter opacity-80">Volkswagen
+                </div>
+                <div class="px-4 py-2 font-black text-xl md:text-2xl uppercase tracking-tighter opacity-80">Chevrolet
+                </div>
+                <div class="px-4 py-2 font-black text-xl md:text-2xl uppercase tracking-tighter opacity-80">Fiat</div>
+                <div class="px-4 py-2 font-black text-xl md:text-2xl uppercase tracking-tighter opacity-80">Toyota</div>
+                <div class="px-4 py-2 font-black text-xl md:text-2xl uppercase tracking-tighter opacity-80">Hyundai
+                </div>
+                <div class="px-4 py-2 font-black text-xl md:text-2xl uppercase tracking-tighter opacity-80">Honda</div>
+                <div
+                    class="px-4 py-2 font-black text-xl md:text-2xl uppercase tracking-tighter opacity-80 hidden sm:block">
+                    Renault</div>
+                <div
+                    class="px-4 py-2 font-black text-xl md:text-2xl uppercase tracking-tighter opacity-80 hidden sm:block">
+                    Nissan</div>
+                <div
+                    class="px-4 py-2 font-black text-xl md:text-2xl uppercase tracking-tighter opacity-80 hidden md:block">
+                    Jeep</div>
+                <div
+                    class="px-4 py-2 font-black text-xl md:text-2xl uppercase tracking-tighter opacity-80 hidden md:block">
+                    Peugeot</div>
+            </div>
+            <p class="text-center text-sm font-semibold text-brand-red mt-6">E muitas outras marcas...</p>
+        </div>
+    </section>
+
+    <!-- Diferenciais Section -->
+    <section id="diferenciais" class="py-16 md:py-24 bg-brand-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+                <div
+                    class="inline-flex items-center gap-2 text-brand-red font-bold tracking-wider text-sm uppercase justify-center w-full mb-4">
+                    <span class="w-4 h-1 bg-brand-red rounded-full"></span> Nosso Padrão <span
+                        class="w-4 h-1 bg-brand-red rounded-full"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Por que escolher a Oficina G7?</h2>
+            </div>
+
+            <!-- Mobile: Stacked blocks. Tablet: 2 cols. Desktop: 3 cols -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+
+                <div
+                    class="bg-white/5 border border-white/10 p-6 md:p-8 rounded-2xl flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <div class="w-14 h-14 bg-brand-red rounded-xl flex items-center justify-center text-white mb-5">
+                        <i class="ph ph-certificate text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">+10 anos de experiência</h3>
+                    <p class="text-gray-400 text-sm">Experiência consolidada resolvendo os mais diversos problemas
+                        automotivos.</p>
+                </div>
+
+                <div
+                    class="bg-white/5 border border-white/10 p-6 md:p-8 rounded-2xl flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <div class="w-14 h-14 bg-brand-red rounded-xl flex items-center justify-center text-white mb-5">
+                        <i class="ph ph-handshake text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Atendimento transparente</h3>
+                    <p class="text-gray-400 text-sm">Orçamentos claros e explicados. Você sabe exatamente o que está
+                        pagando.</p>
+                </div>
+
+                <div
+                    class="bg-white/5 border border-white/10 p-6 md:p-8 rounded-2xl flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <div class="w-14 h-14 bg-brand-red rounded-xl flex items-center justify-center text-white mb-5">
+                        <i class="ph ph-crosshair text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Diagnóstico preciso</h3>
+                    <p class="text-gray-400 text-sm">Vamos direto ao ponto, evitando trocas desnecessárias de peças.</p>
+                </div>
+
+                <div
+                    class="bg-white/5 border border-white/10 p-6 md:p-8 rounded-2xl flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <div class="w-14 h-14 bg-brand-red rounded-xl flex items-center justify-center text-white mb-5">
+                        <i class="ph ph-cpu text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Equipamentos modernos</h3>
+                    <p class="text-gray-400 text-sm">Ferramentas e scanners de última geração para serviços exatos.</p>
+                </div>
+
+                <div
+                    class="bg-white/5 border border-white/10 p-6 md:p-8 rounded-2xl flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <div class="w-14 h-14 bg-brand-red rounded-xl flex items-center justify-center text-white mb-5">
+                        <i class="ph ph-medal text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Compromisso com qualidade</h3>
+                    <p class="text-gray-400 text-sm">Uso exclusivo de peças confiáveis e procedimentos recomendados.</p>
+                </div>
+
+                <div
+                    class="bg-white/5 border border-white/10 p-6 md:p-8 rounded-2xl flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <div class="w-14 h-14 bg-brand-red rounded-xl flex items-center justify-center text-white mb-5">
+                        <i class="ph ph-lightning text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Agilidade no atendimento</h3>
+                    <p class="text-gray-400 text-sm">Otimizamos o tempo para devolver seu veículo o mais rápido
+                        possível.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section id="depoimentos" class="py-16 md:py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+                <div
+                    class="inline-flex items-center gap-2 text-brand-red font-bold tracking-wider text-sm uppercase justify-center w-full mb-4">
+                    <span class="w-4 h-1 bg-brand-red rounded-full"></span> Avaliações <span
+                        class="w-4 h-1 bg-brand-red rounded-full"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark">O que nossos clientes dizem</h2>
+            </div>
+
+            <!-- Mobile: Horizontal snap scrolling. Desktop: Grid -->
+            <div
+                class="flex overflow-x-auto pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 snap-x snap-mandatory hide-scrollbar">
+
+                <!-- Depoimento 1 -->
+                <div
+                    class="bg-brand-light p-8 rounded-2xl border border-gray-100 min-w-[300px] w-full flex-shrink-0 snap-center relative">
+                    <i class="ph-fill ph-quotes text-4xl text-brand-red/20 absolute top-6 right-6"></i>
+                    <div class="flex text-brand-red mb-4 text-xl">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                            class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-brand-gray italic mb-6 leading-relaxed">
+                        "Excelente atendimento e serviço de qualidade. O Wagner explicou tudo com transparência e
+                        resolveu rapidamente o problema do meu carro."
+                    </p>
+                    <div class="font-bold text-brand-dark">— Carlos Henrique</div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div
+                    class="bg-brand-light p-8 rounded-2xl border border-gray-100 min-w-[300px] w-full flex-shrink-0 snap-center relative">
+                    <i class="ph-fill ph-quotes text-4xl text-brand-red/20 absolute top-6 right-6"></i>
+                    <div class="flex text-brand-red mb-4 text-xl">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                            class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-brand-gray italic mb-6 leading-relaxed">
+                        "Levo meu carro na G7 há anos. A honestidade deles é o maior diferencial. Nunca empurram
+                        serviços desnecessários. Recomendo de olhos fechados!"
+                    </p>
+                    <div class="font-bold text-brand-dark">— Mariana Silva</div>
+                </div>
+
+                <!-- Depoimento 3 -->
+                <div
+                    class="bg-brand-light p-8 rounded-2xl border border-gray-100 min-w-[300px] w-full flex-shrink-0 snap-center relative">
+                    <i class="ph-fill ph-quotes text-4xl text-brand-red/20 absolute top-6 right-6"></i>
+                    <div class="flex text-brand-red mb-4 text-xl">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                            class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-brand-gray italic mb-6 leading-relaxed">
+                        "Preço justo e agilidade. Meu motor estava falhando, deixei na oficina e no dia seguinte já
+                        estava pronto e revisado. Profissionalismo nota 10."
+                    </p>
+                    <div class="font-bold text-brand-dark">— Roberto Almeida</div>
+                </div>
+
+            </div>
+
+            <div class="flex justify-center gap-2 mt-4 sm:hidden">
+                <span class="text-xs text-brand-gray flex items-center gap-1"><i class="ph ph-arrows-left-right"></i>
+                    Deslize para ver mais</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-16 md:py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-16">
+
+                <!-- Info Section (Mobile First) -->
+                <div class="order-2 lg:order-1 flex flex-col justify-center">
+                    <div class="mb-8 text-center sm:text-left">
+                        <div
+                            class="inline-flex items-center gap-2 text-brand-red font-bold tracking-wider text-sm uppercase justify-center sm:justify-start w-full mb-4">
+                            <span class="w-4 h-1 bg-brand-red rounded-full"></span> Fale Conosco
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mb-4">Entre em Contato</h2>
+                        <p class="text-brand-gray text-lg">Precisa de um orçamento ou agendar uma revisão? Estamos à
+                            disposição.</p>
+                    </div>
+
+                    <div class="space-y-6 mb-8">
+                        <!-- Endereço -->
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-2xl border border-gray-100 shadow-soft">
+                            <div
+                                class="w-12 h-12 bg-brand-light text-brand-red rounded-xl flex items-center justify-center shrink-0">
+                                <i class="ph ph-map-pin text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-lg">Endereço</h4>
+                                <p class="text-brand-gray mt-1">R. Sena, 328 - Res. Vale do Sol<br>Barueri - SP,
+                                    06437-070</p>
+                            </div>
+                        </div>
+
+                        <!-- WhatsApp -->
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-2xl border border-gray-100 shadow-soft">
+                            <div
+                                class="w-12 h-12 bg-green-50 text-[#25D366] rounded-xl flex items-center justify-center shrink-0">
+                                <i class="ph ph-whatsapp-logo text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-lg">WhatsApp</h4>
+                                <a href="https://wa.me/5511947313860" target="_blank"
+                                    class="text-brand-gray mt-1 hover:text-brand-red block">(11) 94731-3860</a>
+                            </div>
+                        </div>
+
+                        <!-- E-mail -->
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-2xl border border-gray-100 shadow-soft">
+                            <div
+                                class="w-12 h-12 bg-brand-light text-brand-red rounded-xl flex items-center justify-center shrink-0">
+                                <i class="ph ph-envelope-simple text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-lg">E-mail</h4>
+                                <a href="mailto:oficinag7@contato.com"
+                                    class="text-brand-gray mt-1 hover:text-brand-red block">oficinag7@contato.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Horário -->
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-2xl border border-gray-100 shadow-soft">
+                            <div
+                                class="w-12 h-12 bg-brand-light text-brand-red rounded-xl flex items-center justify-center shrink-0">
+                                <i class="ph ph-clock text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-lg">Horário de Funcionamento</h4>
+                                <p class="text-brand-gray mt-1">Segunda a Sábado<br>das 09:00 às 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/5511947313860" target="_blank"
+                        class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white p-5 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all shadow-lg active:scale-95">
+                        <i class="ph-fill ph-whatsapp-logo text-2xl"></i>
+                        Enviar mensagem no WhatsApp
+                    </a>
+                </div>
+
+                <!-- Map Section -->
+                <div
+                    class="order-1 lg:order-2 w-full h-[350px] md:h-[500px] lg:h-full min-h-[350px] rounded-2xl overflow-hidden shadow-soft border border-gray-200">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.6251216656734!2d-46.8839076!3d-23.5100085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf03eb5430ab69%3A0x600f6c2c77fc4e!2sR.%20Sena%2C%20328%20-%20Res.%20Vale%20do%20Sol%2C%20Barueri%20-%20SP%2C%2006437-070!5e0!3m2!1spt-BR!2sbr!4v1715100000000!5m2!1spt-BR!2sbr"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-brand-dark text-white pt-16 pb-24 md:pb-10 border-t-4 border-brand-red">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
+
+                <!-- Logo & Slogan -->
+                <div class="text-center md:text-left">
+                    <a href="#" class="inline-block mb-5">
+                        <img src="./oficinag7.png" alt="Oficina G7 Logo"
+                            class="h-16 md:h-20 w-auto object-contain mx-auto md:mx-0 drop-shadow-lg">
+                    </a>
+                    <p class="text-gray-400 font-medium">Confiança e qualidade para o seu veículo.</p>
+                </div>
+
+                <!-- Links -->
+                <div class="text-center md:text-right">
+                    <h4 class="font-bold text-lg mb-4 text-white">Links Rápidos</h4>
+                    <nav class="flex flex-col gap-3">
+                        <a href="#sobre" class="text-gray-400 hover:text-brand-red transition-colors">Sobre a
+                            Oficina</a>
+                        <a href="#servicos" class="text-gray-400 hover:text-brand-red transition-colors">Serviços</a>
+                        <a href="#contato" class="text-gray-400 hover:text-brand-red transition-colors">Fale Conosco</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-10 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 Oficina G7. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5511947313860" target="_blank"
+        class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-[#128C7E] transition-transform duration-300 z-50 hover:scale-110"
+        aria-label="Falar no WhatsApp">
+        <i class="ph-fill ph-whatsapp-logo text-3xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Menu Mobile Toggle Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const body = document.body;
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                menu.classList.remove('translate-x-full');
+                body.style.overflow = 'hidden'; // Prevent scrolling
+                btn.innerHTML = '<i class="ph ph-x text-3xl"></i>';
+            } else {
+                menu.classList.add('translate-x-full');
+                body.style.overflow = '';
+                btn.innerHTML = '<i class="ph ph-list text-3xl"></i>';
+            }
+        }
+
+        btn.addEventListener('click', toggleMenu);
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) toggleMenu();
+            });
+        });
+
+        // Add subtle shadow to header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.add('shadow-sm');
+            }
+        });
+    </script>
+</body>
+
+</html>
